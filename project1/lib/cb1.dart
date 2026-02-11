@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class cb1 extends StatelessWidget {
   cb1({super.key, required this.colors1, this.text1});
 
-  List<Color> colors1;
+  final List<Color> colors1;
   final String? text1;
 
   @override
