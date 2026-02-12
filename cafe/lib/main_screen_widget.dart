@@ -37,7 +37,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
             Container(
               padding: EdgeInsets.only(top: 50),
               child: Text(
-                "Welcome to Cafe. Find the best Cofee for you",
+                "Welcome to Cafe.\nFind the best Coffee for you.",
                 style: TextStyle(color: Colors.white, fontSize: 34),
               ),
             ),
