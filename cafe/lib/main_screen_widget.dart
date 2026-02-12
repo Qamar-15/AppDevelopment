@@ -95,28 +95,31 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           ],
         ),
       ),
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.home, color: Colors.white),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.shopping_bag, color: Colors.white),
-          ),
+      bottomNavigationBar: Container(
+        color: const Color.fromARGB(137, 19, 19, 19),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.home, color: Colors.white),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.shopping_bag, color: Colors.white),
+            ),
 
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.favorite, color: Colors.white),
-          ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.favorite, color: Colors.white),
+            ),
 
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.notifications, color: Colors.white),
-          ),
-        ],
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notifications, color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }
