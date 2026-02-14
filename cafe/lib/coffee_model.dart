@@ -1,15 +1,15 @@
-class Coffee {
-  const Coffee({
-    required this.name,
-    required this.category,
-    required this.price,
-    required this.image,
-    required this.rating,
-  });
-
+class CoffeeModel {
   final String name;
-  final String category;
+  final String subtitle;
   final double price;
-  final String image;
   final double rating;
+  final String imageUrl;
+
+  CoffeeModel({
+    required this.name,
+    required this.subtitle,
+    required this.price,
+    required this.rating,
+    required this.imageUrl,
+  });
 }

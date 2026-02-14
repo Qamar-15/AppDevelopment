@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import 'coffee_model.dart';
+import 'coffee_list.dart';
 
-class MainScreenWidget extends StatefulWidget {
+class MainScreenWidget extends StatelessWidget {
   const MainScreenWidget({super.key});
 
-  @override
-  _MainScreenWidgetState createState() => _MainScreenWidgetState();
-}
-
-class _MainScreenWidgetState extends State<MainScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: ListView(
-          children: [
-            Column(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Top bar
                 Row(
                   children: [
                     Container(
@@ -59,26 +55,31 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                     ),
                   ],
                 ),
+
+                // Title
                 Container(
-                  padding: EdgeInsets.only(top: 50),
+                  padding: EdgeInsets.only(top: 30),
                   child: Text(
                     "Find the best\nCoffee for you.",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 40,
+                      fontSize: 34,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
+
+                // Search bar
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.grey.withOpacity(0.1),
                   ),
-                  margin: EdgeInsets.only(top: 30),
+                  margin: EdgeInsets.only(top: 25),
                   child: TextField(
+                    style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      hintText: "Find your coffee...",
+                      hintText: "Find Your Coffee ...",
                       hintStyle: TextStyle(
                         color: Colors.white60.withOpacity(0.2),
                       ),
@@ -90,11 +91,17 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                     ),
                   ),
                 ),
+
+                const SizedBox(height: 35),
+
+                // Coffee list (categories + product cards)
+                const CoffeeListWidget(),
               ],
             ),
-          ],
+          ),
         ),
       ),
+
       bottomNavigationBar: Container(
         color: const Color.fromARGB(137, 19, 19, 19),
         child: Row(
@@ -108,12 +115,10 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
               onPressed: () {},
               icon: Icon(Icons.shopping_bag, color: Colors.white),
             ),
-
             IconButton(
               onPressed: () {},
               icon: Icon(Icons.favorite, color: Colors.white),
             ),
-
             IconButton(
               onPressed: () {},
               icon: Icon(Icons.notifications, color: Colors.white),
